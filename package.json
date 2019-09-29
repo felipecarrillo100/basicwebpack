@@ -1,7 +1,7 @@
 {
-  "name": "basicwebpack",
+  "name": "luciad-webpack01",
   "version": "1.0.0",
-  "description": "A very basic template for webpack applications with SAS support and start and build commands",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,8 +10,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
   "devDependencies": {
+    "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^3.2.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.12.0",

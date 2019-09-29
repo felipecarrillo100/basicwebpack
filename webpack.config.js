@@ -1,4 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
     "entry": './src/index.js',
     "output": {
@@ -23,12 +25,26 @@ module.exports = {
                     { loader: "css-loader"},
                     { loader: "sass-loader" }
                 ]
-            }
+            },
+            {
+                test: /\.(png|jpe?g|gif|txt)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
+            },
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: "./public/index.html"
-        })
+        }),
+        new CopyWebpackPlugin(    [
+            {
+                from: 'public',
+                flatten:false
+            }
+        ])
     ]
 }
